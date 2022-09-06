@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EscolaParanoaSemana02;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,10 @@ namespace EscolaParanoa.Externos
 
         public void PagarMensalidade(double mensalidade)
         {
+            if(mensalidade > Saldo)
+            {
+                throw new SaldoInsuficienteException("O saldo é insuficiente!");
+            }
             Saldo -= mensalidade;
         }
     }

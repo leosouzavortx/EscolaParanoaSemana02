@@ -4,6 +4,10 @@
     {
         public Estudante(string nome, int idade)
         {
+            if(idade <= 0)
+            {
+                throw new ArgumentException("A idade deve ser maior que 0");
+            }
             Nome = nome;
             Idade = idade;
             Notas = new int[4];
